@@ -49,7 +49,15 @@ namespace LoginPage.Service
 
         }
 
+        public List<Player> ShowByDesc()
+        {
+            return playersList.OrderByDescending(x => x.PLayerPoints).ToList();
+        }
 
+        public List<Player> GetPlayerByLevel(string l)
+        {
+            return playersList.Where(x => x.Darga.DargaName == l).ToList();
+        }
 
     }
 }

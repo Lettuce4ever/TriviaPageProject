@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+        x:Class="LoginPage.Views.BestScoresPageView"
+        xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+        xmlns:models="clr-namespace:LoginPage.Models"
+        xmlns:vm="clr-namespace:LoginPage.ViewModels"
+        Title="BestScoresPageView"
+        x:DataType="vm:BestScoresPageViewModel">
+    <ScrollView Margin="10">
+        <VerticalStackLayout>
+            <Button Command="{Binding LoadPlayersCommand}" Text="Show players' points" />
+            <CollectionView
+                    x:Name="colview"
+                    HorizontalOptions="CenterAndExpand"
+                    ItemsSource="{Binding Players}"
+                    SelectionMode="Single">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Player">
+                        <Border>
+                            <Grid
+                                    ColumnDefinitions="*,*"
+                                    ColumnSpacing="8"
+                                    HorizontalOptions="CenterAndExpand"
+                                    RowDefinitions="*">
+                                <Label Grid.Column="0" Text="{Binding PlayerName}" />
+                                <Label
+                                        Grid.Column="1"
+                                        Text="{Binding PLayerPoints}"
+                                        TextColor="Red" />
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Border BackgroundColor="BlanchedAlmond">
+                <Picker
+                x:Name="PickerDarga"
+                Title="Select filter"
+                FontFamily="SuperOceanPersonalUse"
+                HorizontalOptions="Center"
+                ItemDisplayBinding="{Binding DargaName}"
+                ItemsSource="{Binding DargasL}"
+                SelectedIndex="{Binding SelectedIndex}"
+                SelectedItem="{Binding SelectedDarga}"
+                />
+            </Border>
+
+
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
