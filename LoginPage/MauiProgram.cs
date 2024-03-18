@@ -24,10 +24,12 @@ namespace LoginPage
             builder.Services.AddTransient<UserQuestionsPageView>();
             builder.Services.AddTransient<ApproveQuestionsPageView>();
             builder.Services.AddTransient<UserAdminPageView>();
+            builder.Services.AddTransient<BestScoresPageView>();
 
             builder.Services.AddTransient<UserQuestionsPageViewModel>();
             builder.Services.AddTransient<ApproveQuestionsPageViewModel>();
             builder.Services.AddTransient<UserAdminPageViewModel>();
+            builder.Services.AddTransient<BestScoresPageViewModel>();
 
             builder.Services.AddSingleton<QService>();
             builder.Services.AddSingleton<UserService>();

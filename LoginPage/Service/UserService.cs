@@ -49,10 +49,15 @@ namespace LoginPage.Service
 
         }
 
-        public List<Player> ShowByDesc()
+        public List<Player> ShowByEither(bool ReOrder)
         {
+            if(ReOrder)
+            return playersList.OrderBy(x => x.PLayerPoints).ToList();
+                 
+                else
             return playersList.OrderByDescending(x => x.PLayerPoints).ToList();
         }
+        
 
         public List<Player> GetPlayerByLevel(string l)
         {

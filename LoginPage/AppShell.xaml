@@ -26,9 +26,12 @@
         Title="User question page"
         ContentTemplate="{DataTemplate local:UserQuestionsPageView}"
         Route="UserQuestionPage" />
-
-
-
-
-
+    
+    <ShellContent
+        Title="Best Scores Page"
+        ContentTemplate="{DataTemplate local:BestScoresPageView}"
+        Route="BestScoresPage" />
+    
+    
+    
 </Shell>
